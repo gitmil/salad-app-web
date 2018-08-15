@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addMember } from '../actions';
 import Card from '../components/Card';
 import fire from '../config/Fire';
+import ApolloClient from './apolloClient';
 
 class Home extends Component {
   constructor(props){
@@ -12,7 +13,7 @@ class Home extends Component {
       name: ''
     };
   }
-  addOneMember(event) { 
+  addOneMember(event) {
     event.preventDefault();
     const { name } = this.state;
     this.props.addMember(name);
@@ -34,7 +35,7 @@ class Home extends Component {
         }
       </ul>
     );
-  } 
+  }
   logOut() {
     fire.auth().signOut();
   }
@@ -50,14 +51,14 @@ class Home extends Component {
             </div>
             <div className="form-group mr-2">
               <form>
-                <input 
-                  type="text" 
-                  className="form-control" 
+                <input
+                  type="text"
+                  className="form-control"
                   placeholder="userName"
                   onChange={(event) => this.setState({name: event.target.value})}
                 />
-                 <button 
-                  type="button" 
+                 <button
+                  type="button"
                   className="btn btn-success"
                   onClick={ (event) => this.addOneMember(event) }
                 >Add</button>
