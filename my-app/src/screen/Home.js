@@ -22,9 +22,9 @@ class Home extends Component {
     return(
       <ul className="list-group col-sm-8 mt-2">
         {
-          members.map(member => {
+          members.map((member, i) => {
             return (
-              <li className="list-group-item">
+              <li key={i} className="list-group-item">
                 <div className="list-item">
                   <Card member={ member }></Card>
                 </div>
@@ -54,7 +54,7 @@ class Home extends Component {
                   type="text" 
                   className="form-control" 
                   placeholder="userName"
-                  onChange={(event) => this.setState({text: event.target.value})}
+                  onChange={(event) => this.setState({name: event.target.value})}
                 />
                  <button 
                   type="button" 
@@ -72,7 +72,6 @@ class Home extends Component {
   }
 }
 const mapStateToProps = (state) => {
-  console.log("state----" + state)
   return {
     members: state
   }

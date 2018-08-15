@@ -1,16 +1,16 @@
 import { ADD_MEMBER } from '../constant';
-import { DELETE_REMINDER } from '../constant';
+import { DELETE_MEMBER } from '../constant';
 
-export const addMember = (text) => {
+export const addMember = (name) => {
     return {
         type: ADD_MEMBER,
-        text,
+        name,
     }
 }
 
-export const deleteReminder = (text) => {
+export const deleteMember = (name) => {
     return {
-        type: DELETE_REMINDER,
-        text,
+        type: DELETE_MEMBER,
+        name,
     }
 }

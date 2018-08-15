@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { deleteReminder } from '../actions';
 
 class AdminCard extends Component{
     constructor(props) {
@@ -29,7 +27,6 @@ class AdminCard extends Component{
 }
 
 const mapStateToProps = (state) => {
-    // console.log("state----" + state)
     return {
       member: state
     }
