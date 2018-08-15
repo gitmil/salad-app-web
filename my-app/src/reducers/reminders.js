@@ -1,9 +1,9 @@
 import { ADD_MEMBER } from '../constant';
-import { DELETE_REMINDER } from '../constant';
+import { DELETE_MEMBER } from '../constant';
 
 const reminder = (action) => {
     return {
-        text: action.text,
+        name: action.name,
         id: Math.random()
     }
 }
@@ -15,9 +15,9 @@ const reminders = (state = [], action = {}) => {
                 ...state,
                 reminder(action)
             ]
-        case DELETE_REMINDER: 
+        case DELETE_MEMBER: 
             return state.filter((s) => {
-                return action.text !== s.text
+                return action.name !== s.name
             });
             // return state.filter((s) => 
             //     action.text !== s.text
