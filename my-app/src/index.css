@@ -1,0 +1,70 @@
+/* .login {
+  background: url(./icons/lemons-wallpaper-7.jpg);
+} */
+.main-form {
+  width: 20%;
+  margin: 0px auto;
+  margin-top: 150px;
+  padding: 20px;
+  font-family: 'Lato', sans-serif;
+}
+.main-form input {
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  padding: 15px;
+  outline: none;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.main-form button {
+  background: #5d8ffc;
+  color:#fff;
+  border: 0px;
+  border-radius: 5px;
+  padding: 15px;
+  display: block;
+  width:100%
+}
+
+.contact-list-item {
+  padding: 20px;
+  background: white;
+  display: flex;
+}
+
+.contact-remove {
+  padding-left: 20px;
+  align-self: center;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  background-image: url('./icons/cancel.svg');
+  background-size: 100% 100%;
+  border: 0;
+  color: black;
+  font-size: 0;
+  vertical-align: middle;
+  cursor: pointer;
+  outline: none;
+}
+.nav {
+  width: 30%;
+  margin: 0px auto;
+}
+.nav-link {
+  display: block;
+  padding: 14px 50px;
+  font-family: 'Lato', sans-serif;
+  color: yellow,
+}
+.contact-avatar {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
