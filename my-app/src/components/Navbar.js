@@ -6,7 +6,7 @@ class Navbar extends Component {
         // const accountName = this.props.user.email;
         return(
             <div>
-                { this.props.user 
+                { this.props.user
                 ? <NavigationAuth/>
                 : <NavigationNonAuth/>
                 }
@@ -24,7 +24,7 @@ const NavigationAuth = props => {
             <Link className='nav-link' to='/Home'>Home</Link>
             <Link className='nav-link' to='/Account'>Account</Link>
             <Link className='nav-link' to='/Admin'>Welcome xxx!</Link>
-        </div> 
+        </div>
     )
 }
 
@@ -32,6 +32,8 @@ const NavigationNonAuth = () => {
     return (
         <div>
             <Link to='/'></Link>
+            <Link to='/SignUp'></Link>
+            <Link to='/ForgetPassword'></Link>
         </div>
     )
 }
