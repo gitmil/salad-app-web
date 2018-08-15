@@ -8,5 +8,13 @@ var config = {
     storageBucket: "reactsaladbar.appspot.com",
     messagingSenderId: "820580484290"
 };
+// var config = {
+//     apiKey: "AIzaSyDN6lTZ24QCNGQHHIbYjcYNlZgltZUHYTI",
+//     authDomain: "saladbar-5720a.firebaseapp.com",
+//     databaseURL: "https://saladbar-5720a.firebaseio.com",
+//     projectId: "saladbar-5720a",
+//     storageBucket: "saladbar-5720a.appspot.com",
+//     messagingSenderId: "494325674899"
+//   };
 const fire = firebase.initializeApp(config);
 export default fire;
