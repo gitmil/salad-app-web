@@ -15,7 +15,6 @@ class Navbar extends Component {
     }
 }
 
-
 const NavigationAuth = props => {
     // const { accountName } = props;
     // const name = accountName && accountName.split('@')[0];

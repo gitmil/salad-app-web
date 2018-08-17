@@ -37,7 +37,15 @@ class Home extends Component {
     );
   }
   logOut() {
-    fire.auth().signOut();
+    const {
+      history
+    } = this.props;
+    fire.auth().signOut().then(function () {
+      history.push('/');
+    })
+    .catch(error => {
+      this.setState({error: error});
+    });
   }
   render() {
     const { members }  = this.props;

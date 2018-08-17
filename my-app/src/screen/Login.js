@@ -16,8 +16,12 @@ class Login extends Component {
 
     login(e) {
         e.preventDefault();
+        const {
+          history
+        } = this.props;
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
         .then(authUser => {
+          history.push('/Home');
         })
         .catch(error => {
             console.log(error);
