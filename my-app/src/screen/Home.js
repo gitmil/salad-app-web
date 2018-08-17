@@ -26,8 +26,8 @@ class Home extends Component {
           members.map((member, i) => {
             return (
               <li key={i} className="list-group-item">
-                <div className="list-item">
-                  <Card member={ member }></Card>
+                <div  className="list-item">
+                      <Card member={ member }></Card>
                 </div>
               </li>
             );
@@ -51,10 +51,10 @@ class Home extends Component {
     const { members }  = this.props;
     return (
       <div className="App">
-        <div className="title">Add Salad Bar Members
+        <div className="title">&nbsp; Add Salad Bar Members
           <div className="form-inline">
             <div className="count-inline">
-              <span>count:</span> &nbsp;
+              &nbsp;&nbsp;<span>count:</span> &nbsp;
               <em>{members.length}</em> &nbsp;
             </div>
             <div className="form-group mr-2">
@@ -75,7 +75,7 @@ class Home extends Component {
           </div>
         </div>
         &nbsp;{ this.renderMembers() }
-        &nbsp;<button onClick={this.logOut}>LogOut</button>
+        &nbsp;&nbsp;<button onClick={this.logOut}>LogOut</button>
       </div>
     );
   }
