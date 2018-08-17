@@ -8,6 +8,7 @@ class Login extends Component {
         super(props);
         this.login = this.login.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.googleSignIn = this.googleSignIn.bind(this);
         this.state = {
             email: '',
             password: ''
@@ -30,6 +31,10 @@ class Login extends Component {
 
     googleSignIn(e) {
         e.preventDefault();
+        const {
+          history
+        } = this.props;
+        history.push('/Home');
         var provider =  new firebase.auth.GoogleAuthProvider();
         fire.auth().signInWithPopup(provider).then(function(result) {
         // This gives you a Google Access Token. You can use it to access the Google API.

@@ -5,14 +5,16 @@ import { deleteMember } from '../actions';
 class Card extends Component{
     render() {
         return (
-            <div>   
-                <div>{ this.props.member.name }</div>
-                <div><em>time</em></div>
+            <div>
+                { this.props.member.name } &nbsp;
+                <em>{new Date().toLocaleString()}</em>&nbsp;
                 <button
-                    type="button" 
-                    className="btn btn-danger"
-                    onClick={ () => this.props.deleteMember(this.props.member.name) }
-                    >Remove</button>
+                 type="button"
+                 className="btn btn-danger"
+                 onClick={ () => this.props.deleteMember(this.props.member.name) }
+                >
+                X
+                </button>
             </div>
         )
     }

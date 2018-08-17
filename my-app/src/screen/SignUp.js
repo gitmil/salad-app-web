@@ -29,6 +29,7 @@ class SignUp extends Component {
 
     fire.auth().createUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
+        history.push('/Home');
         this.setState({ ...INITIAL_STATE });
       })
       .catch(error => {

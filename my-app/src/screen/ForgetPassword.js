@@ -20,8 +20,13 @@ class ForgetPassword extends Component {
       passwordOne
     } = this.state;
 
+    const {
+      history
+    } = this.props;
+
     fire.auth().sendPasswordResetEmail(email)
       .then(authUser => {
+        history.push('/');
         this.setState({ ...INITIAL_STATE });
       })
       .catch(error => {

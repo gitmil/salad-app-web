@@ -54,8 +54,8 @@ class Home extends Component {
         <div className="title">Add Salad Bar Members
           <div className="form-inline">
             <div className="count-inline">
-              <span>count:</span>
-              <em>{members.length}</em>
+              <span>count:</span> &nbsp;
+              <em>{members.length}</em> &nbsp;
             </div>
             <div className="form-group mr-2">
               <form>
@@ -64,7 +64,7 @@ class Home extends Component {
                   className="form-control"
                   placeholder="userName"
                   onChange={(event) => this.setState({name: event.target.value})}
-                />
+                />&nbsp;
                  <button
                   type="button"
                   className="btn btn-success"
@@ -74,8 +74,8 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        { this.renderMembers() }
-        <button onClick={this.logOut}>LogOut</button>
+        &nbsp;{ this.renderMembers() }
+        &nbsp;<button onClick={this.logOut}>LogOut</button>
       </div>
     );
   }
