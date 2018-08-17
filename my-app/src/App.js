@@ -22,7 +22,7 @@ class App extends Component {
         }
     }
     componentDidMount() {
-        this.authListener();
+        this.authListener();   
     }
     authListener() {
         fire.auth().onAuthStateChanged((user) => {

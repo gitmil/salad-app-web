@@ -1,33 +1,40 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addMember } from '../actions';
+import { addMember, getMember } from '../actions';
 import Card from '../components/Card';
 import fire from '../config/Fire';
-import ApolloClient from './apolloClient';
 
 class Home extends Component {
   constructor(props){
     super(props);
-    this.logOut = this.logOut.bind(this);
+    
     this.state = {
       name: ''
     };
+    this.logOut = this.logOut.bind(this);
   }
+
+  componentWillMount() {
+    this.props.getMember(() => this.forceUpdate());
+  }
+
   addOneMember(event) {
     event.preventDefault();
     const { name } = this.state;
     this.props.addMember(name);
   }
+
   renderMembers() {
     const { members }  = this.props;
+
     return(
       <ul className="list-group col-sm-8 mt-2">
-        {
+        { members.length > 0 &&
           members.map((member, i) => {
             return (
               <li key={i} className="list-group-item">
                 <div className="list-item">
-                  <Card member={ member }></Card>
+                  <Card member={member}></Card>
                 </div>
               </li>
             );
@@ -36,11 +43,14 @@ class Home extends Component {
       </ul>
     );
   }
+
   logOut() {
     fire.auth().signOut();
   }
+
   render() {
     const { members }  = this.props;
+
     return (
       <div className="App">
         <div className="title">Add Salad Bar Members
@@ -54,7 +64,7 @@ class Home extends Component {
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="userName"
+                  placeholder="Notes"
                   onChange={(event) => this.setState({name: event.target.value})}
                 />
                  <button
@@ -72,11 +82,11 @@ class Home extends Component {
     );
   }
 }
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    members: state
+    members: state && state.members ? state.members : [],
   }
 }
 
 
-export default connect(mapStateToProps, { addMember })(Home);
+export default connect(mapStateToProps, { addMember, getMember })(Home);
