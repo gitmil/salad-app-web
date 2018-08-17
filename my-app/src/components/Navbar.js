@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import fire from '../config/Fire';
 
 class Navbar extends Component {
-    render() {
-        // const accountName = this.props.user.email;
-        return(
-            <div>
-                { this.props.user 
-                ? <NavigationAuth/>
-                : <NavigationNonAuth/>
-                }
-            </div>
-        )
-    }
+  render() {
+      // const accountName = this.props.user.email;
+      return(
+          <div>
+              { this.props.user
+              ? <NavigationAuth/>
+              : <NavigationNonAuth/>
+              }
+          </div>
+      )
+  }
 }
-
 
 const NavigationAuth = props => {
     // const { accountName } = props;
@@ -24,7 +24,7 @@ const NavigationAuth = props => {
             <Link className='nav-link' to='/Home'>Home</Link>
             <Link className='nav-link' to='/Account'>Account</Link>
             <Link className='nav-link' to='/Admin'>Welcome xxx!</Link>
-        </div> 
+        </div>
     )
 }
 
@@ -32,6 +32,8 @@ const NavigationNonAuth = () => {
     return (
         <div>
             <Link to='/'></Link>
+            <Link to='/SignUp'></Link>
+            <Link to='/ForgetPassword'></Link>
         </div>
     )
 }

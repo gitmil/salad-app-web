@@ -4,9 +4,11 @@ import Login from './screen/Login';
 import Home from './screen/Home'
 import Admin from './screen/Admin';
 import Account from './screen/Account';
+import SignUp from './screen/SignUp';
+import ForgetPassword from './screen/ForgetPassword';
 
-import { 
-    BrowserRouter as Router, 
+import {
+    BrowserRouter as Router,
     Route
   } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -16,9 +18,7 @@ class App extends Component {
         super(props);
         this.state = {
             user: {
-                // "email" : "xxx@gmail.com",
-                // "password": "123456"
-            },
+            }
         }
     }
     componentDidMount() {
@@ -39,8 +39,8 @@ class App extends Component {
         return(
             <Router>
             <div className="App">
-              <Navbar user={this.state.user}/>   
-              {this.state.user? (<AuthPage/>) : (<Login/>)}          
+              <Navbar user={this.state.user}/>
+              {this.state.user? (<AuthPage/>) : (<NonAuthPage/>)}
             </div>
           </Router>
         )
@@ -48,11 +48,21 @@ class App extends Component {
 }
 const AuthPage = () => {
     return (
-        <div>
-            <Route exact path="/Home" component={Home}/>
-            <Route exact path="/Admin" component={Admin}/>
-            <Route exact path="/Account" component={Account}/> 
-        </div> 
+      <div>
+        <Route exact path="/Home" component={Home}/>
+        <Route exact path="/Admin" component={Admin}/>
+        <Route exact path="/Account" component={Account}/>
+      </div>
+    )
+}
+
+const NonAuthPage = () => {
+    return (
+      <div>
+        <Route exact path="/" component={Login}/>
+        <Route exact path="/SignUp" component={SignUp}/>
+        <Route exact path="/ForgetPassword" component={ForgetPassword}/>
+      </div>
     )
 }
 

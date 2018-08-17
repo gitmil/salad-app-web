@@ -45,7 +45,15 @@ class Home extends Component {
   }
 
   logOut() {
-    fire.auth().signOut();
+    const {
+      history
+    } = this.props;
+    fire.auth().signOut().then(function () {
+      history.push('/');
+    })
+    .catch(error => {
+      this.setState({error: error});
+    });
   }
 
   render() {
@@ -53,11 +61,11 @@ class Home extends Component {
 
     return (
       <div className="App">
-        <div className="title">Add Salad Bar Members
+        <div className="title">&nbsp; Add Salad Bar Members
           <div className="form-inline">
             <div className="count-inline">
-              <span>count:</span>
-              <em>{members.length}</em>
+              &nbsp;&nbsp;<span>count:</span> &nbsp;
+              <em>{members.length}</em> &nbsp;
             </div>
             <div className="form-group mr-2">
               <form>
@@ -66,7 +74,7 @@ class Home extends Component {
                   className="form-control"
                   placeholder="Notes"
                   onChange={(event) => this.setState({name: event.target.value})}
-                />
+                />&nbsp;
                  <button
                   type="button"
                   className="btn btn-success"
@@ -76,8 +84,8 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        { this.renderMembers() }
-        <button onClick={this.logOut}>LogOut</button>
+        &nbsp;{ this.renderMembers() }
+        &nbsp;&nbsp;<button onClick={this.logOut}>LogOut</button>
       </div>
     );
   }
